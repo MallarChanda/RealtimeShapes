@@ -19,14 +19,6 @@ function modelLoaded() {
 console.log("poseNet is Initialized!");   
 }
 
-function draw() {
-backgound('#2e8b57');
-document.getElementById("square_size").innerHTML = "Width & Height of Square will be = " + difference + "px";
-fill('#F90093');
-stroke('#F90093'); 
-square(noseX,noseY,difference);  
-}
-
 function gotposes(results) {
 if (results.length>0) {
 console.log(results);
@@ -38,4 +30,12 @@ RightWristX = results[0].pose.rightWrist.x;
 difference = LeftWristX - RightWristX;
 console.log("Left Wrist X= " + LeftWristX + "Right Wrist X= " + RightWristX + "difference= " + difference); 
 }    
+}
+
+function draw() {
+background('#969A97');
+document.getElementById("square_size").innerHTML = "Width & Height of Square will be = " + difference + "px";
+fill('#F90093');
+stroke('#F90093'); 
+square(noseX,noseY,difference);  
 }
